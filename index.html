@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mockups — Paws & Care SpA</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="tb">
+  <button id="tbPrev">◀ Anterior</button>
+  <select id="tbSel"></select>
+  <button id="tbNext">Siguiente ▶</button>
+  <button id="tbHide" title="Tecla H para mostrar/ocultar">Modo captura (H)</button>
+  <span id="tbFile"></span>
+</div>
+
+<div id="public">
+ <div class="auth">
+
+  <section class="screen" data-n="1" data-title="Login formulario en blanco" data-cu="CU-01">
+    <div class="logo">Paws<span>&amp;</span>Care</div>
+    <div class="card">
+      <h1>Iniciar sesión</h1>
+      <p class="sub">Ingresa con tu cuenta del personal de la clínica</p>
+      <label>Correo electrónico</label><input placeholder="nombre@pawscare.cl" data-go="2" readonly>
+      <label>Contraseña</label><input type="password" placeholder="Contraseña" data-go="2" readonly>
+      <button class="btn block" data-go="3">Ingresar</button>
+      <div style="margin-top:14px;text-align:center"><span class="link" data-go="5">¿Olvidaste tu contraseña?</span></div>
+    </div>
+  </section>
+
+  <section class="screen" data-n="2" data-title="Login formulario con datos" data-cu="CU-01">
+    <div class="logo">Paws<span>&amp;</span>Care</div>
+    <div class="card">
+      <h1>Iniciar sesión</h1>
+      <p class="sub">Ingresa con tu cuenta del personal de la clínica</p>
+      <label>Correo electrónico</label><input value="m.cabrera@pawscare.cl" readonly>
+      <label>Contraseña</label><input type="password" value="clave1234" readonly>
+      <button class="btn block" data-go="4">Ingresar</button>
+      <div style="margin-top:14px;text-align:center"><span class="link" data-go="5">¿Olvidaste tu contraseña?</span></div>
+    </div>
+  </section>
+
+  <section class="screen" data-n="3" data-title="Login inicio de sesion incorrecto" data-cu="CU-01">
+    <div class="logo">Paws<span>&amp;</span>Care</div>
+    <div class="card">
+      <h1>Iniciar sesión</h1>
+      <div class="banner err">✕ Correo o contraseña incorrectos. Verifica tus datos e inténtalo nuevamente.</div>
+      <label>Correo electrónico</label><input class="bad" value="m.cabrera@pawscare" data-go="2" readonly>
+      <label>Contraseña</label><input class="bad" type="password" value="1234" data-go="2" readonly>
+      <div class="help e">Te quedan 4 intentos antes de bloquear la cuenta temporalmente.</div>
+      <button class="btn block" data-go="2">Reintentar</button>
+      <div style="margin-top:14px;text-align:center"><span class="link" data-go="5">¿Olvidaste tu contraseña?</span></div>
+    </div>
+  </section>
+
+  <section class="screen" data-n="4" data-title="Login inicio de sesion correcto" data-cu="CU-01">
+    <div class="logo">Paws<span>&amp;</span>Care</div>
+    <div class="card" style="text-align:center">
+      <div style="font-size:44px">✓</div>
+      <h1>¡Bienvenido, Mauricio!</h1>
+      <p class="sub">Sesión iniciada correctamente como <b>Administrador (Gerencia)</b>.</p>
+      <div class="banner ok">Tu perfil tiene acceso a todos los módulos del sistema.</div>
+      <button class="btn block" data-go="7">Ir al panel principal</button>
+    </div>
+  </section>
+
+  <section class="screen" data-n="5" data-title="Recuperar contrasena formulario" data-cu="CU-02">
+    <div class="logo">Paws<span>&amp;</span>Care</div>
+    <div class="card">
+      <h1>Recuperar contraseña</h1>
+      <p class="sub">Ingresa tu correo registrado y te enviaremos un enlace para crear una nueva contraseña.</p>
+      <label>Correo electrónico</label><input value="m.cabrera@pawscare.cl" readonly>
+      <button class="btn block" data-go="6">Enviar enlace</button>
+      <div style="margin-top:14px;text-align:center"><span class="link" data-go="1">← Volver a iniciar sesión</span></div>
+    </div>
+  </section>
+
+  <section class="screen" data-n="6" data-title="Recuperar contrasena resultado" data-cu="CU-02">
+    <div class="logo">Paws<span>&amp;</span>Care</div>
+    <div class="card">
+      <h2>Correo registrado</h2>
+      <div class="banner ok">✓ Te enviamos un enlace de recuperación a <b>m.cabrera@pawscare.cl</b>. Revisa tu bandeja de entrada.</div>
+      <button class="btn ghost sm" data-go="1">Volver a iniciar sesión</button>
+    </div>
+    <div class="card">
+      <h2>Correo no registrado</h2>
+      <div class="banner err">✕ No existe una cuenta asociada a <b>contacto@gmail.com</b>.</div>
+      <button class="btn ghost sm" data-go="5">Intentar con otro correo</button>
+    </div>
+  </section>
+
+ </div>
+</div>
+
+  <div id="shell">
+  <aside class="side">
+    <div class="brand">Paws<span>&amp;</span>Care</div>
+    <div class="nav-item" data-key="inicio" data-go="7" data-roles="admin rec vet bod">🏠 Inicio</div>
+    <div class="nav-item" data-key="fichas" data-go="11" data-roles="admin rec vet">🐾 Fichas Clínicas</div>
+    <div class="nav-item" data-key="agenda" data-go="14" data-roles="admin rec">📅 Agendamiento</div>
+    <div class="nav-item" data-key="inventario" data-go="18" data-roles="admin bod">📦 Inventario</div>
+    <div class="nav-item" data-key="reportes" data-go="21" data-roles="admin">📊 Reportes</div>
+    <div class="nav-item" data-key="usuarios" data-go="23" data-roles="admin">👥 Usuarios</div>
+    <div class="spacer"></div>
+    <div class="nav-item" data-go="8" data-roles="admin rec vet bod">🚪 Cerrar sesión</div>
+  </aside>
+  <div class="mainwrap">
+    <div class="top">
+      <label for="roleSel">Ver menú como:</label>
+      <select id="roleSel">
+        <option value="admin">Administrador (Gerencia)</option>
+        <option value="rec">Recepcionista</option>
+        <option value="vet">Médico Veterinario</option>
+        <option value="bod">Encargado de Bodega</option>
+      </select>
+      <div class="chip"><div class="avatar">MC</div><div><b>Mauricio Cabrera</b><div class="meta" id="roleName">Administrador</div></div></div>
+    </div>
+    <div id="main">
+
+      <section class="screen" data-n="7" data-title="Panel principal Dashboard" data-cu="CU-01" data-shell="1" data-active="inicio">
+        <h1>Buenas tardes, Mauricio</h1>
+        <p class="sub">Martes 29 de septiembre de 2026 · Resumen de la clínica</p>
+        <div class="kpis">
+          <div class="kpi" data-go="17"><div class="v">8</div><div class="l">Citas agendadas hoy</div></div>
+          <div class="kpi" data-go="21"><div class="v">105</div><div class="l">Atenciones del mes</div></div>
+          <div class="kpi alert" data-go="20"><div class="v">1</div><div class="l">Alerta de stock mínimo</div></div>
+          <div class="kpi" data-go="23"><div class="v">4</div><div class="l">Usuarios activos</div></div>
+        </div>
+        <div class="cols">
+          <div class="card">
+            <h2>Citas de hoy</h2>
+            <table>
+              <tr><th>Hora</th><th>Mascota</th><th>Veterinario</th><th>Estado</th></tr>
+              <tr class="click" data-go="17"><td>09:00</td><td>Luna (Felino)</td><td>Dr. Tomás Vidal</td><td><span class="badge b-mut">Atendida</span></td></tr>
+              <tr class="click" data-go="17"><td>10:30</td><td>Firulais (Canino)</td><td>Dra. Paula Soto</td><td><span class="badge b-teal">Agendada</span></td></tr>
+              <tr class="click" data-go="17"><td>11:00</td><td>Rocky (Canino)</td><td>Dra. Camila Reyes</td><td><span class="badge b-teal">Agendada</span></td></tr>
+              <tr class="click" data-go="17"><td>15:30</td><td>Kiwi (Ave)</td><td>Dr. Tomás Vidal</td><td><span class="badge b-teal">Agendada</span></td></tr>
+            </table>
+          </div>
+          <div>
+            <div class="card">
+              <h2>Accesos rápidos</h2>
+              <div class="qa">
+                <div data-go="9">＋ Nueva ficha</div>
+                <div data-go="11">🔎 Buscar ficha</div>
+                <div data-go="14">📅 Agendar cita</div>
+                <div data-go="18">📦 Registrar entrada</div>
+              </div>
+            </div>
+            <div class="banner warn" data-go="20" style="cursor:pointer">⚠ <b>Amoxicilina 250mg</b> está bajo el stock mínimo. Ver alerta →</div>
+          </div>
+        </div>
+      </section>
+      <section class="screen" data-n="8" data-title="Cerrar sesion confirmacion" data-cu="CU-03" data-base="7" data-overlay="logoutModal"></section>
+
+      <section class="screen" data-n="9" data-title="Registrar mascota y tutor" data-cu="CU-04" data-shell="1" data-active="fichas">
+        <div class="subtabs"><span class="subtab" data-go="11">Buscar ficha</span><span class="subtab on" data-go="9">Nueva ficha</span></div>
+        <h1>Registrar mascota y tutor</h1>
+        <p class="sub">Los campos marcados con * son obligatorios</p>
+        <div class="card">
+          <h2>Datos del tutor</h2>
+          <div class="grid2">
+            <div><label>Nombre completo *</label><input value="Ana Torres Muñoz"></div>
+            <div><label>RUT *</label><input value="12.345.678-5"></div>
+            <div><label>Teléfono *</label><input value="+56 9 8765 4321"></div>
+            <div><label>Correo electrónico</label><input value="ana.torres@gmail.com"></div>
+          </div>
+          <label>Dirección</label><input value="Av. Concha y Toro 1234, Puente Alto">
+        </div>
+        <div class="card">
+          <h2>Datos de la mascota</h2>
+          <div class="grid3">
+            <div><label>Nombre *</label><input value="Firulais"></div>
+            <div><label>Especie *</label><select><option>Canino</option><option>Felino</option><option>Ave</option><option>Exótico</option></select></div>
+            <div><label>Raza</label><input value="Mestizo"></div>
+            <div><label>Edad</label><select><option>Menos de 1 año</option><option>1 año</option><option>2 años</option><option selected>3 años</option><option>4 años</option><option>5 años o más</option></select></div>
+            <div><label>Sexo *</label><select><option>Macho</option><option>Hembra</option></select></div>
+            <div><label>Esterilizado</label><select><option>Sí</option><option selected>No</option></select></div>
+          </div>
+          <div class="btns"><button class="btn" data-go="10">Guardar registro</button><button class="btn ghost" data-go="11">Cancelar</button></div>
+        </div>
+      </section>
+
+      <section class="screen" data-n="10" data-title="Registro guardado tutor existente" data-cu="CU-04" data-shell="1" data-active="fichas">
+        <h1>Registrar mascota y tutor</h1>
+        <p class="sub">Resultado del registro</p>
+        <div class="card">
+          <div class="banner ok">✓ Registro guardado correctamente. Se generó la ficha <b>N.º 00125</b> para <b>Firulais</b>.</div>
+          <div class="banner info">ℹ El tutor <b>Ana Torres Muñoz (12.345.678-5)</b> ya estaba registrado. La nueva mascota se asoció a su ficha existente sin duplicar datos.</div>
+          <div class="pethead"><div class="petimg">🐶</div><div><b>Firulais</b> · Ficha N.º 00125<div class="meta">Canino · Mestizo · 3 años · Macho · Tutor: Ana Torres Muñoz</div></div></div>
+          <div class="btns"><button class="btn" data-go="12">Registrar atención</button><button class="btn ghost" data-go="11">Ver historial</button></div>
+        </div>
+      </section>
+
+      <!-- 11 BUSCAR FICHA E HISTORIAL -->
+      <section class="screen" data-n="11" data-title="Buscar ficha e historial clinico" data-cu="CU-06" data-shell="1" data-active="fichas">
+        <div class="subtabs"><span class="subtab on" data-go="11">Buscar ficha</span><span class="subtab" data-go="9">Nueva ficha</span></div>
+        <h1>Fichas clínicas</h1>
+        <div class="card">
+          <div class="grid3" style="align-items:end">
+            <div><label>Buscar por</label><select><option>Nombre de la mascota</option><option>RUT del tutor</option><option>N.º de ficha</option></select></div>
+            <div><label>Valor</label><input value="Firulais"></div>
+            <div><button class="btn block" style="margin-top:0" data-toast="1 resultado encontrado">Buscar</button></div>
+          </div>
+        </div>
+        <div class="cols">
+          <div class="card">
+            <div class="pethead"><div class="petimg">🐶</div><div><b>Firulais</b> · Ficha N.º 00125<div class="meta">Canino · Mestizo · 3 años · Tutor: Ana Torres (12.345.678-5)</div></div></div>
+            <h2 style="margin-top:14px">Historial de atenciones</h2>
+            <table>
+              <tr><th>Fecha</th><th>Diagnóstico</th><th>Tratamiento</th><th>Profesional</th></tr>
+              <tr><td>27-09-2026</td><td>Otitis externa leve</td><td>Gotas óticas 7 días</td><td>Dra. Paula Soto</td></tr>
+              <tr><td>02-05-2026</td><td>Control anual</td><td>—</td><td>Dr. Tomás Vidal</td></tr>
+              <tr><td>14-01-2026</td><td>Gastroenteritis</td><td>Dieta blanda y probiótico</td><td>Dra. Camila Reyes</td></tr>
+            </table>
+            <h2 style="margin-top:16px">Vacunas</h2>
+            <span class="badge b-ok">Óctuple · 02-05-2026</span> <span class="badge b-ok">Antirrábica · 02-05-2026</span>
+            <div class="btns"><button class="btn" data-go="12">Registrar atención</button><button class="btn ghost" data-go="13">Emitir receta</button></div>
+          </div>
+          <div class="card">
+            <h2>Ficha sin historial</h2>
+            <div class="pethead"><div class="petimg">🐱</div><div><b>Luna</b> · Ficha N.º 00131<div class="meta">Felino · 1 año</div></div></div>
+            <div class="empty">Esta ficha aún no cuenta con historial clínico.</div>
+            <button class="btn ghost sm" style="margin-top:12px" data-go="12">Registrar primera atención</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen" data-n="12" data-title="Registrar atencion clinica" data-cu="CU-05" data-shell="1" data-active="fichas">
+        <h1>Registrar atención clínica</h1>
+        <p class="sub">Firulais · Ficha N.º 00125 · Tutor: Ana Torres</p>
+        <div class="banner info">¿La mascota no tiene ficha? <span class="link" data-go="9">Registrar mascota y tutor</span></div>
+        <div class="card">
+          <div class="grid2">
+            <div><label>Fecha y hora</label><input value="29-09-2026 · 10:42" readonly></div>
+            <div><label>Profesional responsable</label><input value="Dra. Paula Soto" readonly></div>
+          </div>
+          <label>Antecedentes médicos</label><textarea>Sin alergias conocidas. Otitis tratada en septiembre.</textarea>
+          <div class="grid2">
+            <div><label>Vacuna aplicada</label><select><option>Ninguna</option><option>Óctuple</option><option>Antirrábica</option><option>Triple felina</option><option>Leucemia felina</option></select></div>
+            <div><label>Peso (kg)</label><input value="12,4"></div>
+          </div>
+          <label>Diagnóstico *</label><input value="Dermatitis alérgica">
+          <label>Tratamiento indicado *</label><textarea>Antihistamínico oral por 10 días y baño con shampoo medicado.</textarea>
+          <div class="btns"><button class="btn" data-go="13">Guardar y emitir receta</button><button class="btn ghost" data-go="11">Guardar atención</button></div>
+        </div>
+      </section>
+
+      <section class="screen" data-n="13" data-title="Emitir prescripcion digital" data-cu="CU-07" data-shell="1" data-active="fichas">
+        <div class="banner ok">✓ Atención guardada correctamente en la ficha N.º 00125.</div>
+        <h1>Emitir prescripción digital</h1>
+        <p class="sub">Firulais · Dra. Paula Soto · 29-09-2026</p>
+        <div class="card">
+          <div class="rx"><div><label>Fármaco</label><select><option>Cetirizina 10 mg</option><option>Amoxicilina 250 mg</option><option>Meloxicam 1,5 mg</option></select></div><div><label>Dosis</label><input value="1/2 comprimido"></div><div><label>Frecuencia</label><select><option>Cada 24 h</option><option>Cada 12 h</option><option>Cada 8 h</option></select></div><div><label>Duración</label><input value="10 días"></div></div>
+          <div class="rx"><div><label>Fármaco</label><select><option>Shampoo clorhexidina 2%</option><option>Cetirizina 10 mg</option></select></div><div><label>Dosis</label><input value="Baño completo"></div><div><label>Frecuencia</label><select><option>2 veces por semana</option><option>Cada 24 h</option></select></div><div><label>Duración</label><input value="3 semanas"></div></div>
+          <div style="margin-top:12px"><span class="link" data-toast="Se agregó una nueva fila de fármaco">＋ Agregar fármaco</span></div>
+          <label>Indicaciones adicionales</label><textarea>Control en 15 días.</textarea>
+          <div class="btns">
+            <button class="btn" data-toast="Receta enviada a ana.torres@gmail.com">✉ Enviar al tutor</button>
+            <button class="btn ghost" data-toast="Descargando receta_00125.pdf">⬇ Descargar PDF</button>
+            <button class="btn ghost" data-go="11">Volver al historial</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen" data-n="14" data-title="Agendar cita" data-cu="CU-08" data-shell="1" data-active="agenda">
+        <div class="subtabs"><span class="subtab on" data-go="14">Nueva cita</span><span class="subtab" data-go="17">Citas agendadas</span></div>
+        <h1>Agendar cita</h1>
+        <div class="cols">
+          <div class="card">
+            <div class="grid2">
+              <div><label>Veterinario *</label><select><option>Dra. Paula Soto</option><option>Dr. Tomás Vidal</option><option>Dra. Camila Reyes</option></select></div>
+              <div><label>Motivo</label><select><option>Control general</option><option>Vacunación</option><option>Urgencia</option><option>Procedimiento</option></select></div>
+            </div>
+            <label>Fecha — octubre 2026</label>
+            <div class="cal" id="cal"></div>
+            <label style="margin-top:16px">Horarios del miércoles 07-10-2026</label>
+            <div class="slots">
+              <div class="slot">09:00</div><div class="slot">09:30</div><div class="slot busy" data-go="16">10:00</div><div class="slot sel">10:30</div><div class="slot">11:00</div>
+              <div class="slot busy" data-go="16">11:30</div><div class="slot">12:00</div><div class="slot">15:00</div><div class="slot">15:30</div><div class="slot">16:00</div>
+            </div>
+            <div class="help">Los horarios tachados ya están ocupados para este profesional.</div>
+          </div>
+          <div class="card">
+            <h2>Paciente</h2>
+            <label>Buscar mascota o RUT del tutor *</label><input value="Firulais — Ana Torres (12.345.678-5)">
+            <label>Observaciones</label><textarea>Control por dermatitis.</textarea>
+            <div class="banner info" style="margin-top:14px">Cita: <b>07-10-2026, 10:30</b> con <b>Dra. Paula Soto</b></div>
+            <button class="btn block" data-go="15">Confirmar cita</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen" data-n="15" data-title="Cita confirmada" data-cu="CU-08 CU-10" data-shell="1" data-active="agenda">
+        <h1>Agendar cita</h1>
+        <div class="card" style="max-width:560px">
+          <div class="banner ok">✓ Horario disponible. La cita fue confirmada y registrada en la agenda del profesional.</div>
+          <table>
+            <tr><td class="meta">Mascota</td><td><b>Firulais</b> (Canino)</td></tr>
+            <tr><td class="meta">Tutor</td><td>Ana Torres Muñoz</td></tr>
+            <tr><td class="meta">Veterinario</td><td>Dra. Paula Soto</td></tr>
+            <tr><td class="meta">Fecha y hora</td><td>Miércoles 07-10-2026, 10:30</td></tr>
+            <tr><td class="meta">Motivo</td><td>Control general</td></tr>
+          </table>
+          <div class="btns"><button class="btn" data-go="17">Ver citas agendadas</button><button class="btn ghost" data-go="7">Volver al panel</button></div>
+        </div>
+      </section>
+
+      <section class="screen" data-n="16" data-title="Conflicto de horario" data-cu="CU-10" data-shell="1" data-active="agenda">
+        <h1>Agendar cita</h1>
+        <div class="card" style="max-width:560px">
+          <div class="banner err">✕ La <b>Dra. Paula Soto</b> ya tiene una cita el <b>07-10-2026 a las 10:00</b>. No es posible agendar dos atenciones en el mismo horario.</div>
+          <h2>Horarios disponibles más cercanos</h2>
+          <div class="slots" style="grid-template-columns:repeat(3,1fr)">
+            <div class="slot" data-go="15">09:30</div><div class="slot" data-go="15">10:30</div><div class="slot" data-go="15">11:00</div>
+          </div>
+          <div class="btns"><button class="btn ghost" data-go="14">Elegir otra fecha u otro veterinario</button></div>
+        </div>
+      </section>
+
+      <section class="screen" data-n="17" data-title="Modificar cancelar cita" data-cu="CU-09" data-shell="1" data-active="agenda">
+        <div class="subtabs"><span class="subtab" data-go="14">Nueva cita</span><span class="subtab on" data-go="17">Citas agendadas</span></div>
+        <h1>Citas agendadas</h1>
+        <div class="card">
+          <div class="grid3" style="align-items:end;margin-bottom:10px">
+            <div><label>Veterinario</label><select><option>Todos</option><option>Dra. Paula Soto</option><option>Dr. Tomás Vidal</option><option>Dra. Camila Reyes</option></select></div>
+            <div><label>Estado</label><select><option>Todos</option><option>Agendada</option><option>Atendida</option><option>Cancelada</option></select></div>
+            <div><label>Buscar</label><input placeholder="Mascota o RUT"></div>
+          </div>
+          <table>
+            <tr><th>Fecha</th><th>Mascota</th><th>Veterinario</th><th>Estado</th><th>Acciones</th></tr>
+            <tr><td>07-10-2026 10:30</td><td>Firulais</td><td>Dra. Paula Soto</td><td><span class="badge b-teal">Agendada</span></td><td><div class="btns"><button class="btn sm" data-go="14">Modificar horario</button><button class="btn sm danger" data-modal="cancelModal">Cancelar</button></div></td></tr>
+            <tr><td>29-09-2026 11:00</td><td>Rocky</td><td>Dra. Camila Reyes</td><td><span class="badge b-teal">Agendada</span></td><td><div class="btns"><button class="btn sm" data-go="14">Modificar horario</button><button class="btn sm danger" data-modal="cancelModal">Cancelar</button></div></td></tr>
+            <tr><td>29-09-2026 09:00</td><td>Luna</td><td>Dr. Tomás Vidal</td><td><span class="badge b-mut">Atendida</span></td><td><span class="lock">🔒 Cita atendida: no se puede modificar ni cancelar</span></td></tr>
+          </table>
+        </div>
+        <div class="overlay" id="cancelModal">
+          <div class="modal">
+            <h2>¿Cancelar esta cita?</h2>
+            <p class="sub">Firulais · Dra. Paula Soto · 07-10-2026, 10:30. El horario quedará disponible para otros pacientes.</p>
+            <div class="btns"><button class="btn danger" data-close="cancelModal" data-toast="Cita cancelada. El horario fue liberado.">Sí, cancelar cita</button><button class="btn ghost" data-close="cancelModal">Volver</button></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen" data-n="18" data-title="Inventario y registrar entrada" data-cu="CU-11" data-shell="1" data-active="inventario">
+        <div class="subtabs"><span class="subtab on" data-go="18">Stock y entradas</span><span class="subtab" data-go="19">Registrar salida</span><span class="subtab" data-go="20">Alertas (1)</span></div>
+        <h1>Inventario</h1>
+        <div class="cols">
+          <div class="card">
+            <h2>Stock actual</h2>
+            <table>
+              <tr><th>Producto</th><th>Categoría</th><th>Stock</th><th>Mínimo</th><th>Estado</th></tr>
+              <tr><td>Amoxicilina 250mg</td><td>Fármaco</td><td>2</td><td>5</td><td><span class="badge b-err">Crítico</span></td></tr>
+              <tr><td>Collar antipulgas</td><td>Accesorio</td><td>6</td><td>5</td><td><span class="badge b-warn">Bajo</span></td></tr>
+              <tr><td>Vacuna óctuple</td><td>Vacuna</td><td>12</td><td>6</td><td><span class="badge b-ok">Normal</span></td></tr>
+              <tr><td>Alimento Premium 3kg</td><td>Alimento</td><td>40</td><td>10</td><td><span class="badge b-ok">Normal</span></td></tr>
+            </table>
+          </div>
+          <div class="card">
+            <h2>Registrar entrada</h2>
+            <label>Producto *</label>
+            <select id="prodSel"><option>Amoxicilina 250mg</option><option>Collar antipulgas</option><option>Vacuna óctuple</option><option>Alimento Premium 3kg</option><option value="nuevo">＋ Crear producto nuevo</option></select>
+            <div id="newProd" style="display:none">
+              <label>Nombre del producto nuevo</label><input placeholder="Ej: Meloxicam 1,5mg">
+              <div class="grid2"><div><label>Categoría</label><select><option>Fármaco</option><option>Alimento</option><option>Accesorio</option><option>Vacuna</option></select></div><div><label>Stock mínimo</label><input value="5"></div></div>
+            </div>
+            <label>Proveedor *</label><select><option>Drag Pharma</option><option>Laboratorio Chile</option><option>Distribuidora PetFood</option></select>
+            <div class="grid2"><div><label>Cantidad *</label><input value="20"></div><div><label>Fecha de recepción</label><input value="29-09-2026"></div></div>
+            <button class="btn block" data-toast="Entrada registrada. Stock actualizado.">Registrar entrada</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen" data-n="19" data-title="Registrar salida de stock" data-cu="CU-12" data-shell="1" data-active="inventario">
+        <div class="subtabs"><span class="subtab" data-go="18">Stock y entradas</span><span class="subtab on" data-go="19">Registrar salida</span><span class="subtab" data-go="20">Alertas (1)</span></div>
+        <h1>Registrar salida de stock</h1>
+        <div class="card" style="max-width:560px">
+          <div class="banner err">✕ La cantidad solicitada (15) supera el stock disponible (10). Operación rechazada.</div>
+          <label>Producto *</label><select><option>Amoxicilina 250mg</option><option>Collar antipulgas</option><option>Vacuna óctuple</option><option>Alimento Premium 3kg</option></select>
+          <div class="help">Stock disponible: 10 unidades · Mínimo: 5</div>
+          <div class="grid2">
+            <div><label>Cantidad *</label><input class="bad" value="15"><div class="help e">Máximo permitido: 10</div></div>
+            <div><label>Motivo</label><select><option>Uso en atención</option><option>Venta</option><option>Merma o vencimiento</option></select></div>
+          </div>
+          <div class="btns"><button class="btn" data-go="20">Registrar salida</button><button class="btn ghost" data-go="18">Cancelar</button></div>
+        </div>
+      </section>
+
+      <section class="screen" data-n="20" data-title="Alerta de stock minimo" data-cu="CU-13" data-shell="1" data-active="inventario">
+        <div class="subtabs"><span class="subtab" data-go="18">Stock y entradas</span><span class="subtab" data-go="19">Registrar salida</span><span class="subtab on" data-go="20">Alertas (1)</span></div>
+        <div class="banner ok">✓ Salida registrada: 8 unidades de Amoxicilina 250mg.</div>
+        <h1>Alertas de stock mínimo</h1>
+        <div class="card">
+          <div class="alertrow"><div class="ic">⚠</div><div class="tx"><b>Amoxicilina 250mg</b> quedó con <b>2 unidades</b> (mínimo: 5).<div class="meta">Generada automáticamente · 29-09-2026 10:51</div></div><span class="badge b-err">Pendiente</span><button class="btn sm" data-go="18">Registrar entrada</button><button class="btn sm ghost" data-toast="Alerta marcada como gestionada">Marcar como gestionada</button></div>
+          <div class="alertrow done"><div class="ic">✓</div><div class="tx"><b>Vacuna óctuple</b> quedó con 4 unidades (mínimo: 6).<div class="meta">Gestionada el 20-09-2026 por Pedro Lagos</div></div><span class="badge b-ok">Gestionada</span></div>
+        </div>
+      </section>
+
+      <section class="screen" data-n="21" data-title="Reporte de atenciones" data-cu="CU-14" data-shell="1" data-active="reportes">
+        <div class="subtabs"><span class="subtab on" data-go="21">Atenciones</span><span class="subtab" data-go="22">Productos</span></div>
+        <h1>Reporte de atenciones</h1>
+        <div class="card">
+          <div class="grid3" style="align-items:end">
+            <div><label>Desde</label><input value="01-09-2026"></div>
+            <div><label>Hasta</label><input value="30-09-2026"></div>
+            <div><label>Veterinario</label><select><option>Todos</option><option>Dra. Paula Soto</option><option>Dr. Tomás Vidal</option><option>Dra. Camila Reyes</option></select></div>
+          </div>
+          <button class="btn" data-toast="Reporte actualizado">Generar reporte</button>
+        </div>
+        <div class="card">
+          <h2>Atenciones por profesional · septiembre 2026</h2>
+          <table>
+            <tr><th>Veterinario</th><th style="width:45%"></th><th>Atenciones</th></tr>
+            <tr><td>Dra. Paula Soto</td><td><div class="barbg"><div class="bar" style="width:100%"></div></div></td><td>42</td></tr>
+            <tr><td>Dr. Tomás Vidal</td><td><div class="barbg"><div class="bar" style="width:83%"></div></div></td><td>35</td></tr>
+            <tr><td>Dra. Camila Reyes</td><td><div class="barbg"><div class="bar" style="width:67%"></div></div></td><td>28</td></tr>
+            <tr><td><b>Total</b></td><td></td><td><b>105</b></td></tr>
+          </table>
+          <div class="btns"><button class="btn ghost" data-toast="Descargando reporte_atenciones.pdf">⬇ Exportar PDF</button><button class="btn ghost" data-toast="Descargando reporte_atenciones.xlsx">⬇ Exportar Excel</button></div>
+        </div>
+      </section>
+
+      <section class="screen" data-n="22" data-title="Reporte de productos" data-cu="CU-15" data-shell="1" data-active="reportes">
+        <div class="subtabs"><span class="subtab" data-go="21">Atenciones</span><span class="subtab on" data-go="22">Productos</span></div>
+        <h1>Reporte de productos con mayor rotación</h1>
+        <div class="card">
+          <div class="grid3" style="align-items:end">
+            <div><label>Categoría</label><select><option>Todas</option><option>Fármacos</option><option>Alimentos</option><option>Accesorios</option><option>Vacunas</option></select></div>
+            <div><label>Período</label><select><option>Septiembre 2026</option><option>Agosto 2026</option><option>Últimos 3 meses</option></select></div>
+            <div><button class="btn block" style="margin-top:0" data-toast="Reporte actualizado">Generar reporte</button></div>
+          </div>
+        </div>
+        <div class="card">
+          <table>
+            <tr><th>#</th><th>Producto</th><th>Categoría</th><th style="width:35%"></th><th>Unidades</th></tr>
+            <tr><td>1</td><td>Alimento Premium 3kg</td><td>Alimento</td><td><div class="barbg"><div class="bar" style="width:100%"></div></div></td><td>57</td></tr>
+            <tr><td>2</td><td>Amoxicilina 250mg</td><td>Fármaco</td><td><div class="barbg"><div class="bar" style="width:60%"></div></div></td><td>34</td></tr>
+            <tr><td>3</td><td>Collar antipulgas</td><td>Accesorio</td><td><div class="barbg"><div class="bar" style="width:37%"></div></div></td><td>21</td></tr>
+            <tr><td>4</td><td>Vacuna óctuple</td><td>Vacuna</td><td><div class="barbg"><div class="bar" style="width:26%"></div></div></td><td>15</td></tr>
+          </table>
+          <div class="btns"><button class="btn ghost" data-toast="Descargando reporte_productos.pdf">⬇ Exportar PDF</button><button class="btn ghost" data-toast="Descargando reporte_productos.xlsx">⬇ Exportar Excel</button></div>
+        </div>
+      </section>
+
+      <section class="screen" data-n="23" data-title="Gestion de usuarios" data-cu="CU-16" data-shell="1" data-active="usuarios">
+        <h1>Gestión de usuarios</h1>
+        <div class="cols">
+          <div class="card">
+            <table>
+              <tr><th>Nombre</th><th>Rol</th><th>Activo</th><th></th></tr>
+              <tr><td>Mauricio Cabrera<div class="meta">m.cabrera@pawscare.cl</div></td><td>Administrador</td><td><span class="switch on" data-go="24"></span></td><td><span class="link" data-edit="Mauricio Cabrera|m.cabrera@pawscare.cl|Administrador (Gerencia)">Editar</span></td></tr>
+              <tr><td>Javiera Muñoz<div class="meta">j.munoz@pawscare.cl</div></td><td>Recepcionista</td><td><span class="switch on"></span></td><td><span class="link" data-edit="Javiera Muñoz|j.munoz@pawscare.cl|Recepcionista">Editar</span></td></tr>
+              <tr><td>Paula Soto<div class="meta">p.soto@pawscare.cl</div></td><td>Médico Veterinario</td><td><span class="switch on"></span></td><td><span class="link" data-edit="Paula Soto|p.soto@pawscare.cl|Médico Veterinario">Editar</span></td></tr>
+              <tr><td>Tomás Vidal<div class="meta">t.vidal@pawscare.cl</div></td><td>Médico Veterinario</td><td><span class="switch"></span></td><td><span class="link" data-edit="Tomás Vidal|t.vidal@pawscare.cl|Médico Veterinario">Editar</span></td></tr>
+              <tr><td>Pedro Lagos<div class="meta">p.lagos@pawscare.cl</div></td><td>Encargado de Bodega</td><td><span class="switch on"></span></td><td><span class="link" data-edit="Pedro Lagos|p.lagos@pawscare.cl|Encargado de Bodega">Editar</span></td></tr>
+            </table>
+          </div>
+          <div class="card">
+            <h2 id="uTitle">Nuevo usuario</h2>
+            <label>Nombre completo *</label><input id="uName" placeholder="Ej: Camila Reyes">
+            <label>Correo electrónico *</label><input id="uMail" placeholder="nombre@pawscare.cl">
+            <label>Rol *</label><select id="uRole"><option>Recepcionista</option><option>Médico Veterinario</option><option>Encargado de Bodega</option><option>Administrador (Gerencia)</option></select>
+            <label>Contraseña temporal</label><input type="password" value="temporal123">
+            <div class="btns"><button class="btn" data-toast="Usuario guardado. Permisos actualizados según el rol.">Guardar usuario</button><button class="btn ghost" id="uNew">Limpiar</button></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen" data-n="24" data-title="Gestion de usuarios accion bloqueada" data-cu="CU-16" data-shell="1" data-active="usuarios">
+        <h1>Gestión de usuarios</h1>
+        <div class="banner err">✕ No es posible desactivar a <b>Mauricio Cabrera</b> porque es el único administrador activo del sistema. Asigna primero el rol de administrador a otro usuario.</div>
+        <div class="card">
+          <table>
+            <tr><th>Nombre</th><th>Rol</th><th>Activo</th></tr>
+            <tr><td>Mauricio Cabrera<div class="meta">m.cabrera@pawscare.cl</div></td><td>Administrador</td><td><span class="switch on hl"></span></td></tr>
+            <tr><td>Javiera Muñoz</td><td>Recepcionista</td><td><span class="switch on"></span></td></tr>
+            <tr><td>Paula Soto</td><td>Médico Veterinario</td><td><span class="switch on"></span></td></tr>
+            <tr><td>Tomás Vidal</td><td>Médico Veterinario</td><td><span class="switch"></span></td></tr>
+            <tr><td>Pedro Lagos</td><td>Encargado de Bodega</td><td><span class="switch on"></span></td></tr>
+          </table>
+          <button class="btn" data-go="23">Entendido</button>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</div>
+
+<!-- Modal de cierre de sesión (Pantalla 8) -->
+<div class="overlay" id="logoutModal">
+  <div class="modal">
+    <h2>¿Cerrar sesión?</h2>
+    <div class="banner warn">Tienes cambios sin guardar en el formulario actual. Si sales ahora, se perderán.</div>
+    <div class="btns"><button class="btn" data-go="1">Cerrar sesión</button><button class="btn ghost" data-go="7">Cancelar</button></div>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const secs={};$$('.screen').forEach(s=>secs[s.dataset.n]=s);
+const N=24;let cur=1;
+const slug=t=>t.normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-zA-Z0-9]+/g,'-').replace(/^-|-$/g,'');
+const sel=$('#tbSel');
+for(let i=1;i<=N;i++){const s=secs[i];const o=document.createElement('option');o.value=i;o.textContent=`Pantalla ${i} — ${s.dataset.title} (${s.dataset.cu})`;sel.appendChild(o);}
+function go(n){n=+n;if(!secs[n])return;cur=n;const s=secs[n];const t=s.dataset.base?secs[s.dataset.base]:s;
+  $$('.screen').forEach(x=>x.classList.remove('show'));t.classList.add('show');
+  const inner=!!t.dataset.shell;$('#shell').classList.toggle('on',inner);$('#public').classList.toggle('on',!inner);
+  $$('.nav-item').forEach(i=>i.classList.toggle('active',!!i.dataset.key&&i.dataset.key===t.dataset.active));
+  $$('.overlay').forEach(o=>o.classList.remove('on'));if(s.dataset.overlay)$('#'+s.dataset.overlay).classList.add('on');
+  sel.value=n;$('#tbFile').textContent=`Pantalla-${String(n).padStart(2,'0')}-${slug(s.dataset.title)}.png`;
+  window.scrollTo(0,0);}
+let tt;function toast(m){const e=$('#toast');e.textContent=m;e.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>e.classList.remove('on'),2600);}
+document.addEventListener('click',e=>{
+  const tst=e.target.closest('[data-toast]');if(tst)toast(tst.dataset.toast);
+  const m=e.target.closest('[data-modal]');if(m){$('#'+m.dataset.modal).classList.add('on');return;}
+  const c=e.target.closest('[data-close]');if(c){$('#'+c.dataset.close).classList.remove('on');return;}
+  const ed=e.target.closest('[data-edit]');if(ed){const[a,b,r]=ed.dataset.edit.split('|');$('#uTitle').textContent='Editar usuario';$('#uName').value=a;$('#uMail').value=b;$('#uRole').value=r;return;}
+  const g=e.target.closest('[data-go]');if(g){go(g.dataset.go);return;}
+  const sw=e.target.closest('.switch');if(sw)sw.classList.toggle('on');
+  const d=e.target.closest('.cal .d:not(.off)');if(d){$$('.cal .d').forEach(x=>x.classList.remove('sel'));d.classList.add('sel');}
+  const sl=e.target.closest('#main .slot:not(.busy)');if(sl&&!sl.dataset.go){sl.parentElement.querySelectorAll('.slot').forEach(x=>x.classList.remove('sel'));sl.classList.add('sel');}
+});
+$('#uNew').addEventListener('click',()=>{$('#uTitle').textContent='Nuevo usuario';$('#uName').value='';$('#uMail').value='';});
+$('#prodSel').addEventListener('change',e=>{$('#newProd').style.display=e.target.value==='nuevo'?'block':'none';});
+const roleNames={admin:'Administrador',rec:'Recepcionista',vet:'Médico Veterinario',bod:'Encargado de Bodega'};
+$('#roleSel').addEventListener('change',e=>{const r=e.target.value;$('#roleName').textContent=roleNames[r];$$('.nav-item').forEach(i=>i.classList.toggle('hidden',!i.dataset.roles.split(' ').includes(r)));});
+sel.addEventListener('change',()=>go(sel.value));
+$('#tbPrev').onclick=()=>go(cur>1?cur-1:N);$('#tbNext').onclick=()=>go(cur<N?cur+1:1);
+$('#tbHide').onclick=()=>document.body.classList.add('capture');
+document.addEventListener('keydown',e=>{if(['INPUT','TEXTAREA','SELECT'].includes(e.target.tagName))return;
+  if(e.key==='h'||e.key==='H')document.body.classList.toggle('capture');
+  if(e.key==='ArrowRight')go(cur<N?cur+1:1);if(e.key==='ArrowLeft')go(cur>1?cur-1:N);});
+// calendario octubre 2026 (1 de octubre = jueves)
+(function(){const c=$('#cal');['Lu','Ma','Mi','Ju','Vi','Sa','Do'].forEach(h=>c.insertAdjacentHTML('beforeend',`<div class="h">${h}</div>`));
+  for(let i=0;i<3;i++)c.insertAdjacentHTML('beforeend','<div></div>');
+  for(let d=1;d<=31;d++){const wd=(d+2)%7;const off=wd>=5;c.insertAdjacentHTML('beforeend',`<div class="d${off?' off':''}${d===7?' sel':''}">${d}</div>`);}})();
+go(1);
+</script>
+</body>
+</html>
